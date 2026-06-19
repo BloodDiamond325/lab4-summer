@@ -5,9 +5,17 @@ public class Ingredient {
     //   quantity (double)
     //   unit (String)
 
+    private String name;
+    private double quantity;
+    private String units;
+
 
     public Ingredient(String name, double quantity, String unit) {
         // TO DO M1
+        this.name = name;
+        this.quantity = quantity;
+        this.units = unit;
+
     }
 
     // TO DO M1: getters (no setters)
@@ -21,6 +29,11 @@ public class Ingredient {
     //     0.5  -> "0.5"
     @Override
     public String toString() {
-        return "";
+        // quantity + " " + unit + " " + name " ";}
+        String q = (quantity == Math.floor(quantity))
+                ? String.valueOf((int) quantity)
+                : String.valueOf(quantity);
+
+        return String.format("%s %s %s", q, units, name);
     }
 }
